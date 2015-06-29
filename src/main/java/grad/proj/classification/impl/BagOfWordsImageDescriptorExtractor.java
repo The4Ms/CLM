@@ -91,8 +91,9 @@ class BagOfWordsImageDescriptorExtractor {
 		imgDescriptorTemp.put(0, 0, dptr);
 		
 		// Normalize image descriptor.
-		Mat rowsConstAsMat = new Mat(1, clusterCount, descriptorType(), new Scalar(1.0f / descriptors.rows()));
-		imgDescriptorTemp.mul(rowsConstAsMat).copyTo(imgDescriptor);;
+//		Mat rowsConstAsMat = new Mat(1, clusterCount, descriptorType(), new Scalar(1.0f / descriptors.rows()));
+//		imgDescriptorTemp.mul(rowsConstAsMat).copyTo(imgDescriptor);;
+		imgDescriptorTemp.copyTo(imgDescriptor);
 		
 		// Add the descriptors of image keypoints
 		if (_descriptors != null) {
